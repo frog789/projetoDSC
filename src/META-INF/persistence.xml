@@ -1,0 +1,27 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <persistence-unit name="FarmaControl" transaction-type="RESOURCE_LOCAL">
+  	
+  	<class>com.farmacontrol.usuario.Usuario</class>
+  	<class>com.farmacontrol.usuario.Cliente</class>
+  	<class>com.farmacontrol.usuario.Funcionario</class>
+  	<class>com.farmacontrol.usuario.Cartao</class>
+  	<class>com.farmacontrol.usuario.Endereco</class>
+  	<class>com.farmacontrol.produto.Lote</class>
+  	<class>com.farmacontrol.produto.Produto</class>
+  	<class>com.farmacontrol.produto.Fornecedor</class>
+  	<class>com.farmacontrol.venda.Venda</class>
+  	
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/farmacontrol" />
+      <property name="javax.persistence.jdbc.user" value="marcio" />
+      <property name="javax.persistence.jdbc.password" value="1" />
+      <property name="eclipselink.ddl-generation" value="create-tables" />
+      <property name="eclipselink.ddl-generation.output-mode" value="database" />
+      <property name="eclipselink.logging.level" value="FINE"/>
+      
+    </properties>
+  </persistence-unit>
+</persistence>
