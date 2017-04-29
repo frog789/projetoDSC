@@ -10,7 +10,9 @@ import javax.persistence.*;
 					 length=1)
 @Access(AccessType.FIELD)
 public abstract class Usuario {
-    @Id
+  
+	
+	@Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="id")
     private long id;
