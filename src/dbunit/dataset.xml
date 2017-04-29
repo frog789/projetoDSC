@@ -2,4 +2,7 @@
 
 <dataset>
 
+	<tb_usuario nome_usuario="Raphael Almeida" tipo_usuario="F"/>
+	<tb_funcionario func_funcao ="Balconista" func_matricula = "543212312" />
+
 </dataset>
