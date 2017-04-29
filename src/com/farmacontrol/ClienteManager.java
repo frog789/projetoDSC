@@ -1,8 +1,6 @@
 package com.farmacontrol;
 import com.farmacontrol.usuario.Cliente;
-import com.farmacontrol.usuario.Usuario;
 import com.farmacontrol.usuario.Endereco;
-import com.farmacontrol.usuario.Cartao;
 import com.farmacontrol.usuario.TipoUsuario;
 import java.util.List;
 import javax.persistence.*;

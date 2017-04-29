@@ -1,6 +1,4 @@
-package testes;
-
-import static org.junit.Assert.*;
+package test.dsc;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -14,11 +12,10 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.postgresql.PostgresqlDataTypeFactory;
 import org.dbunit.operation.DatabaseOperation;
-import org.junit.Test;
 
 public class DbUnitUtil {
 
-private static final String XML_FILE = "";
+private static final String XML_FILE = "/dbunit/dataset.xml";
 	
 	
 	@SuppressWarnings("UseSpecificCatch")
@@ -27,10 +24,11 @@ private static final String XML_FILE = "";
 		IDatabaseConnection db_conn = null;
 		
 		try {
-			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/farmacontrol", "postgres", "postgres");
-			db_conn = new DatabaseConnection(conn,"FarmaControl");
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/farmacontrol", "marcio", "1");
+			db_conn = new DatabaseConnection(conn,"public");//,"FarmaControl");
 			DatabaseConfig dbConfig = db_conn.getConfig();
-            dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new PostgresqlDataTypeFactory());
+			dbConfig.setFeature(DatabaseConfig.FEATURE_CASE_SENSITIVE_TABLE_NAMES, Boolean.TRUE);
+            //dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new PostgresqlDataTypeFactory());
 //            dbConfig.setProperty(DatabaseConfig.PROPERTY_METADATA_HANDLER, new MySqlMetadataHandler());
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
