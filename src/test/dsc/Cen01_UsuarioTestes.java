@@ -31,8 +31,9 @@ public class Cen01_UsuarioTestes {
 	public void setUp() throws Exception {
 		logger = Logger.getGlobal();
 		logger.setLevel(Level.INFO);
-		emf = Persistence.createEntityManagerFactory("FarmaControl");
+		Persistence.generateSchema("FarmaControl", null);
 		DbUnitUtil.insertData();
+		emf = Persistence.createEntityManagerFactory("FarmaControl");
 		em = emf.createEntityManager();
 		et = em.getTransaction();
 		et.begin();
@@ -51,6 +52,9 @@ public class Cen01_UsuarioTestes {
 			}
 			
 		} finally {
+			if (et.isActive()) {
+				et.rollback();
+			}
 			em.close();
 			em = null;
 			et = null;

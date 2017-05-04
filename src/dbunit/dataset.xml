@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dataset>
-
-	<tb_usuario nome_usuario="Raphael Almeida" tipo_usuario="F"/>
-	<tb_funcionario func_funcao ="Balconista" func_matricula = "543212312" />
-
+	<tb_usuario id="1" nome_usuario="Raphael Almeida" tipo_usuario="F"/>
+	<tb_funcionario id_usuario="1" func_funcao ="Balconista" func_matricula = "543212312" />
 </dataset>

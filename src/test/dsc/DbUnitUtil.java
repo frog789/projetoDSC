@@ -28,7 +28,7 @@ private static final String XML_FILE = "/dbunit/dataset.xml";
 			db_conn = new DatabaseConnection(conn,"public");//,"FarmaControl");
 			DatabaseConfig dbConfig = db_conn.getConfig();
 			dbConfig.setFeature(DatabaseConfig.FEATURE_CASE_SENSITIVE_TABLE_NAMES, Boolean.TRUE);
-            //dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new PostgresqlDataTypeFactory());
+            dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new PostgresqlDataTypeFactory());
 //            dbConfig.setProperty(DatabaseConfig.PROPERTY_METADATA_HANDLER, new MySqlMetadataHandler());
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
