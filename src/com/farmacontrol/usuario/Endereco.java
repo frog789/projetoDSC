@@ -29,6 +29,7 @@ public class Endereco {
 	@Column(name="end_cidade")
 	private String cidade;
 	
+	@Size(min = 2, max = 2)
 	@Column(name="end_estado")
 	private String estado;
 	

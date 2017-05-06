@@ -12,10 +12,10 @@ public class Cartao {
     @Column(name="id")
     private long id;
 	
-	@Column(name="num_cartao")
+	@Column(name="num_cartao", nullable = false, unique = true)
 	private String numero;
 	
-	@Column(name="bandeira_cartao")
+	@Column(name="bandeira_cartao", nullable = false)
 	private String bandeira;
 
 	public String getNumero() {
